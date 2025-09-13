@@ -1,0 +1,181 @@
+###
+POST http://localhost:8080/adminlogin HTTP/1.1
+Content-Type: application/json
+
+{
+    "username":"admin",
+    "password":"admin"
+}
+
+###
+POST http://localhost:8080/add HTTP/1.1
+Content-Type: application/json
+
+{
+  "token": "f649db7543eea3014dec701b5c908c2c071b487334a9a871878d01963a794d38",
+  "title": "Campus Interview - Google",
+  "description": "Scheduled for March 10, 10:00 AM"
+}
+
+###
+GET http://localhost:8080/all HTTP/1.1
+
+###
+DELETE http://localhost:8080/delete HTTP/1.1
+Content-Type: application/json
+
+{
+  "token": "cb63c63ae325a765dceb0a2440997c6bac34bd60c8cab8423e3c16077c7e3daa",
+  "event_id": "67dc01e431eb1f56e6791163"
+}
+
+
+
+###
+POST http://localhost:8080/createstudent HTTP/1.1
+Content-Type: application/json
+
+{
+  "college_id": "stu002",
+  "password": "stu002",
+  "name": "aaryan tej",
+  "email": "aaryan@bmcc.com"
+}
+
+###
+GET http://localhost:8080/admin/get_all_students
+
+
+###
+GET http://localhost:8080/get_student_and_profile
+content-Type: application/json
+
+{
+    "college_id":"747027"
+}
+
+###
+POST http://localhost:8080/createpost
+Content-Type: application/json
+
+{
+  "token": "88f9855a0ae5bba9ad45e4617ebba9315bd4f70ad6bf7a9b978e62e284c18ae1",
+  "company_name": "TCS",
+  "company_website_url": "https://www.tcs.com",
+  "job_title": "Software Engineer",
+  "job_description": "Develop and maintain web applications.",
+  "requirements": "Strong knowledge of JavaScript, React, and Node.js.",
+  "location": "Mumbai, India",
+  "salary_package": "8 LPA",
+  "skills_required": ["JavaScript", "React", "Node.js"],
+  "deadline": "2025-02-28T23:59:59.999Z"
+}
+
+###
+GET http://localhost:8080/allposts
+
+###
+DELETE http://localhost:8080/deletepost HTTP/1.1
+Content-Type: application/json
+
+{
+  "token": "759e99ec91b83f4ffb58daf51872f52a0c549fef73e7812440f032a97d0198fd",
+  "post_id": "67a119660ff155f5d5b5e16f"
+}
+
+###
+POST http://localhost:8080/get_applicants_for_job HTTP/1.1
+Content-Type: application/json
+
+{
+  "post_id": "67a11d23c805e1f8983d31c6"
+}
+
+
+
+###
+POST http://localhost:8080/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "college_id":"747027",
+    "password":"747027"
+}
+//up to date till this
+
+###
+POST http://localhost:8080/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "college_id":"stu001",
+    "password":"stu001"
+}
+
+###
+GET http://localhost:8080/get_my_profile
+content-Type: application/json
+
+{
+    "token":"7d194882c03fefe8b10dad3283f143864370e9c4ed51785e52d07a04654950a4"
+}
+
+###
+GET http://localhost:8080/get_post
+content-Type: application/json
+
+{
+    "post_id":"67a11d23c805e1f8983d31c6"
+}
+
+###
+POST http://localhost:8080/update_profile_data
+Content-Type: application/json
+
+{
+  "token": "94494ff043fe08a544fccaa37ce02be0dfe883b5f8160268d7d69fd359d5ad5d",
+  "bio": "Updated bio content",
+  "resume": "updated_resume.pdf",
+  "education": [
+    {
+      "degree": "TY BBA 2025",
+      "specialization": "BBA - Finance",
+      "percent_10th": "90",
+      "percent_12th": "85",
+      "cgpa_grad": "8.5"
+    }
+  ]
+}
+
+###
+POST http://localhost:8080/apply HTTP/1.1
+Content-Type: application/json
+
+{
+  "token": "2f1e4474f3772b22ce6da413cae2979306bb3e864a4455cee8283e0456412228",
+  "jobId": "67a11d23c805e1f8983d31c6"
+}
+
+###
+POST http://localhost:8080/get_my_applications HTTP/1.1
+Content-Type: application/json
+
+{
+  "token": "3e03cb25fa3eeee03327e3b2a79f72768fae20c0aa36d4c143d4043932cae5d0"
+}
+
+###
+POST http://localhost:8080/submit_feedback HTTP/1.1
+Content-Type: application/json
+
+{
+  "token": "ef8eaf8abb6210416c7196fe336deeee1b43f8193524f84fa68d5110ef754884",
+  "title": "Great Platform best",
+  "feedback": "The placement portal is really helpful!"
+}
+
+###
+GET http://localhost:8080/admin/get_feedbacks
+
+###
+GET http://localhost:8080/admin/get_feedback/67a2e1d3d7f5e4ee93d07a17
