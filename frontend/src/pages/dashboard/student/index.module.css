@@ -1,0 +1,142 @@
+.scrollComponent {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.scrollComponent h1 {
+  font-size: 2.2rem;
+  color: #2c3e50;
+  border-bottom: 3px solid #3498db;
+  padding-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.postsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.singleCard {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.singleCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.singleCard h2 {
+  font-size: 1.5rem;
+  color: #2c3e50;
+  margin: 0 0 0.5rem 0;
+}
+
+.singleCard h3 {
+  font-size: 1.1rem;
+  color: #3498db;
+  margin: 0 0 0.8rem 0;
+}
+
+.singleCard p {
+  color: #7f8c8d;
+  line-height: 1.5;
+  margin-bottom: 0.8rem;
+}
+
+.singleCard p strong {
+  color: #34495e;
+  font-weight: 600;
+}
+
+.singleCard__expandButton {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: #f1f1f1;
+  color: #2c3e50;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-weight: 500;
+}
+
+.singleCard__expandButton:hover {
+  background-color: #e0e0e0;
+}
+
+.applyButton {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+.applyButton:hover:not([style*="background-color: gray"]) {
+  background-color: #0056b3 !important;
+  transform: scale(1.03);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .scrollComponent {
+    padding: 1.2rem;
+  }
+  
+  .postsContainer {
+    grid-template-columns: 1fr;
+  }
+  
+  .singleCard {
+    padding: 1.2rem;
+  }
+}
+
+/* Add a loading state for when posts are being fetched */
+.loadingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+.loadingSpinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: #3498db;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Style for empty state */
+.emptyState {
+  text-align: center;
+  padding: 3rem;
+  color: #7f8c8d;
+  font-size: 1.2rem;
+}

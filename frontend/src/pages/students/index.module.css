@@ -1,0 +1,205 @@
+/* index.module.css */
+
+/* Global styles for the student page */
+.scrollComponent {
+  padding: 20px;
+  height: 100%;
+  overflow-y: auto;
+  background-color: #f6f8fa;
+}
+
+/* Create Student Component Styles */
+.createStudentComponent {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  margin-bottom: 30px;
+  transition: all 0.3s ease;
+}
+
+.createStudentComponent:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.createStudentComponent__container {
+  width: 100%;
+}
+
+.createStudentComponent__container h2 {
+  color: #2c3e50;
+  font-size: 22px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 10px;
+  display: inline-block;
+}
+
+.createStudentComponent__container form {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.createStudentComponent__container form div {
+  display: flex;
+  flex-direction: column;
+}
+
+.createStudentComponent__container label {
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #34495e;
+}
+
+.createStudentComponent__container input {
+  padding: 12px 16px;
+  border: 1px solid #e1e5e9;
+  border-radius: 6px;
+  transition: all 0.2s;
+  font-size: 15px;
+}
+
+.createStudentComponent__container input:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+.createStudentComponent__container input::placeholder {
+  color: #95a5a6;
+}
+
+.createButton {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  grid-column: 1 / -1;
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.createButton:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+}
+
+.createButton:active {
+  transform: translateY(0);
+}
+
+/* Student Cards List Styles */
+.postsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.singleCard {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  border-top: 4px solid #3498db;
+}
+
+.singleCard:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+}
+
+.singleCard > div:first-child {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.singleCard > div:last-child {
+  display: flex;
+  flex-direction: column;
+}
+
+.singleCard h2 {
+  color: #2c3e50;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+  padding-bottom: 5px;
+}
+
+.singleCard h3 {
+  color: #3498db;
+  font-size: 16px;
+  margin: 8px 0;
+  font-weight: 500;
+}
+
+.singleCard p {
+  color: #7f8c8d;
+  margin: 5px 0;
+  font-size: 15px;
+}
+
+.singleCard img {
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #f1f1f1;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.singleCard svg {
+  transition: all 0.2s ease;
+}
+
+.singleCard svg:hover {
+  transform: scale(1.2);
+  color: #e74c3c !important;
+}
+
+/* Loading state */
+.scrollComponent h2 {
+  text-align: center;
+  color: #7f8c8d;
+  font-size: 20px;
+  margin-top: 50px;
+}
+
+/* Animation for loading */
+@keyframes pulse {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+
+.scrollComponent h2:contains("Loading...") {
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .createStudentComponent__container form {
+    grid-template-columns: 1fr;
+  }
+  
+  .postsContainer {
+    grid-template-columns: 1fr;
+  }
+}

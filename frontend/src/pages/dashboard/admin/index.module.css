@@ -1,0 +1,298 @@
+/* Admin Dashboard Enhanced Styles */
+
+.scrollComponent {
+    padding: 20px;
+    background-color: #f5f7fa;
+    min-height: calc(100vh - 60px);
+  }
+  
+  /* Create Post Component Styles */
+  .createPostComponent {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    padding: 25px;
+    margin-bottom: 30px;
+  }
+  
+  .createPostComponent h2 {
+    color: #2c3e50;
+    font-size: 1.5rem;
+    margin: 0 0 20px 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f0f4f8;
+  }
+  
+  .postForm {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  
+  .postForm input,
+  .postForm textarea {
+    padding: 12px;
+    border: 1px solid #e1e5eb;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    color: #5d6778;
+  }
+  
+  /* Fix for placeholder selector issue in CSS modules */
+  .postForm input::placeholder,
+  .postForm textarea::placeholder {
+    color: #a0aec0;
+    opacity: 1;
+  }
+  
+  .postForm input:focus,
+  .postForm textarea:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+  }
+  
+  .postForm textarea {
+    grid-column: span 2;
+    min-height: 100px;
+    resize: vertical;
+  }
+  
+  .postForm input[type="date"] {
+    color: #5d6778;
+  }
+  
+  .postForm button[type="submit"] {
+    grid-column: span 2;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.2s ease;
+  }
+  
+  .postForm button[type="submit"]:hover {
+    background-color: #2980b9;
+  }
+  
+  /* Responsive adjustments for form */
+  @media (max-width: 768px) {
+    .postForm {
+      grid-template-columns: 1fr;
+    }
+    
+    .postForm textarea {
+      grid-column: span 1;
+    }
+    
+    .postForm button[type="submit"] {
+      grid-column: span 1;
+    }
+  }
+  
+  /* Posts Container Styles */
+  .postsContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 20px;
+    width: 100%;
+  }
+  
+  .singleCard {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+    position: relative;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .singleCard:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .singleCard h2 {
+    color: #2c3e50;
+    margin: 0 0 8px 0;
+    font-size: 1.4rem;
+    font-weight: 600;
+  }
+  
+  .singleCard h3 {
+    color: #3498db;
+    margin: 0 0 12px 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+  
+  .singleCard p {
+    color: #5d6778;
+    margin: 8px 0;
+    line-height: 1.5;
+  }
+  
+  .singleCard__expandButton {
+    cursor: pointer;
+    background-color: #f0f4f8;
+    color: #4a6583;
+    font-size: 0.8rem;
+    padding: 5px 10px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 10px;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+  }
+  
+  .singleCard__expandButton:hover {
+    background-color: #e2e8f0;
+    color: #2c3e50;
+  }
+  
+  /* Delete button styling */
+  .deleteButton {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .deleteButton:hover {
+    background-color: #c0392b;
+  }
+  
+  .applicantsButton {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-weight: 500;
+    margin-top: 12px;
+    transition: background-color 0.2s ease;
+  }
+  
+  .applicantsButton:hover {
+    background-color: #2980b9;
+  }
+  
+  .applicantsList {
+    margin-top: 15px;
+    padding: 15px;
+    background-color: #f8fafc;
+    border-radius: 6px;
+    border-left: 3px solid #3498db;
+  }
+  
+  .applicantsList h4 {
+    color: #2c3e50;
+    margin: 0 0 10px 0;
+    font-size: 1.1rem;
+  }
+  
+  .applicantsList ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .applicantsList li {
+    padding: 12px;
+    margin-bottom: 10px;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  
+  .applicantsList li:last-child {
+    margin-bottom: 0;
+  }
+  
+  .viewProfileButton {
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 12px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-top: 8px;
+    transition: background-color 0.2s ease;
+  }
+  
+  .viewProfileButton:hover {
+    background-color: #219653;
+  }
+  
+  .profileDetails {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f0fdf4;
+    border-radius: 4px;
+    border-left: 3px solid #27ae60;
+  }
+  
+  .profileDetails h4 {
+    color: #2c3e50;
+    margin: 0 0 8px 0;
+  }
+  
+  .profileDetails p {
+    margin: 5px 0;
+  }
+  
+  .profileDetails a {
+    color: #3498db;
+    text-decoration: none;
+  }
+  
+  .profileDetails a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Image styling */
+  .applicantsList img {
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #e2e8f0;
+    margin: 5px 0;
+  }
+  
+  /* Additional responsive adjustments */
+  @media (max-width: 768px) {
+    .postsContainer {
+      grid-template-columns: 1fr;
+    }
+    
+    .applicantsList li {
+      padding: 10px;
+    }
+  }
+  
+  /* Animation for loading state */
+  @keyframes pulse {
+    0% { opacity: 0.6; }
+    50% { opacity: 1; }
+    100% { opacity: 0.6; }
+  }
+  
+  .loading {
+    text-align: center;
+    color: #7f8c8d;
+    font-size: 1.2rem;
+    animation: pulse 1.5s infinite ease-in-out;
+  }

@@ -1,0 +1,240 @@
+/* index.module.css */
+
+/* Global styles for the feedback page */
+.scrollComponent {
+  padding: 25px;
+  height: 100%;
+  overflow-y: auto;
+  background-color: #f6f8fa;
+}
+
+.scrollComponent h1 {
+  color: #2c3e50;
+  font-size: 28px;
+  margin-bottom: 25px;
+  font-weight: 600;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 10px;
+  display: inline-block;
+}
+
+/* Feedback submission form styles */
+.feedbackForm {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+  padding: 30px;
+  margin-bottom: 30px;
+  transition: all 0.3s ease;
+  width: 80%;
+  margin: 0 auto 30px;
+}
+
+.feedbackForm:hover {
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+}
+
+.feedbackForm div {
+  margin-bottom: 20px;
+}
+
+.feedbackForm label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 500;
+  color: #34495e;
+  padding-left: 0 !important;
+  font-size: 16px;
+}
+
+.feedbackForm input,
+.feedbackForm textarea {
+  width: 85%;
+  padding: 14px 16px;
+  border: 1px solid #e1e5e9;
+  border-radius: 6px;
+  transition: all 0.25s ease;
+  font-size: 15px;
+  resize: none;
+}
+
+.feedbackForm input:focus,
+.feedbackForm textarea:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+.feedbackForm textarea {
+  height: 150px;
+  line-height: 1.5;
+}
+
+.feedbackForm input::placeholder,
+.feedbackForm textarea::placeholder {
+  color: #95a5a6;
+}
+
+.createButton {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.createButton:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.createButton:active {
+  transform: translateY(0);
+}
+
+.createButton:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Success and error message styles */
+.success,
+.error {
+  padding: 16px;
+  border-radius: 6px;
+  margin: 20px auto;
+  width: 80%;
+  text-align: center;
+  font-weight: 500;
+  animation: fadeIn 0.5s ease-in;
+}
+
+.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Feedback cards for admin view */
+.postsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.singleCard {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+  padding: 22px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border-top: 4px solid #3498db;
+  display: flex;
+  flex-direction: column;
+}
+
+.singleCard:hover {
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+  transform: translateY(-5px);
+}
+
+.singleCard h2 {
+  color: #2c3e50;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 15px 0;
+  border-bottom: 1px solid #ecf0f1;
+  padding-bottom: 10px;
+}
+
+.singleCard p {
+  color: #34495e;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.singleCard p:nth-of-type(1) {
+  flex-grow: 1;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed #ecf0f1;
+}
+
+.singleCard p strong {
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+/* Loading state */
+.scrollComponent p:contains("Loading feedbacks...") {
+  text-align: center;
+  color: #7f8c8d;
+  font-size: 18px;
+  margin-top: 40px;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .feedbackForm {
+    width: 95%;
+    padding: 20px;
+  }
+  
+  .feedbackForm input,
+  .feedbackForm textarea {
+    width: 100%;
+  }
+  
+  .success,
+  .error {
+    width: 95%;
+  }
+  
+  .postsContainer {
+    grid-template-columns: 1fr;
+  }
+  
+  .scrollComponent h1 {
+    font-size: 24px;
+  }
+}

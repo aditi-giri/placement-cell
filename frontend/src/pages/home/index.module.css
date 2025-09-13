@@ -1,0 +1,211 @@
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  margin-top: 50px;
+}
+
+.header {
+  background-color: #2C4A6B;
+  color: white;
+  padding: 15px;
+  margin-bottom: 30px;
+  border-radius: 4px;
+  font-size: 1.5rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.section {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.sectionTitle {
+  color: #2C4A6B;
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.responsibilitiesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.responsibilityCard {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+  background-color: #f8f8f8;
+  border: 1px solid silver;
+  border-radius: 8px;
+}
+
+.iconContainer {
+  background-color: #2C4A6B;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+}
+
+.responsibilityText {
+  flex: 1;
+  font-size: 0.9rem;
+}
+
+.aboutText {
+  text-align: justify;
+  line-height: 1.6;
+  color: #333;
+}
+
+.processContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.processStep {
+  text-align: center;
+  padding: 1.5rem;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  position: relative;
+}
+
+.stepNumber {
+  background-color: #2C4A6B;
+  color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  font-weight: bold;
+}
+
+.processStep h6 {
+  color: #2C4A6B;
+  margin-bottom: 0.5rem;
+}
+
+.processStep p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.infoCardsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.infoCard {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid silver;
+}
+
+.infoCard h5 {
+  color: #2C4A6B;
+  margin-bottom: 1rem;
+}
+
+.pdfLink {
+  color: #2C4A6B;
+  text-decoration: none;
+  margin-left: 0.5rem;
+}
+
+.pdfLink:hover {
+  color: #c56060;
+}
+
+.committeeGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.memberCard {
+  background-color: #f8f8f8;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid silver;
+}
+
+.memberCard h6 {
+  color: #2C4A6B;
+  margin-bottom: 0.5rem;
+}
+
+.role {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.contactInfo {
+  font-size: 0.9rem;
+}
+
+.contactInfo p {
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tableContainer {
+  overflow-x: auto;
+  margin-bottom: 50px;
+}
+
+.coordinatorsTable,
+.fliersTable {
+  width: 100%;
+  border-collapse: collapse;
+  
+}
+
+.coordinatorsTable th,
+.fliersTable th {
+  background-color: #f8f8f8;
+  color: #333;
+  padding: 12px;
+  text-align: left;
+  border-bottom: 2px solid silver;
+}
+
+.coordinatorsTable td,
+.fliersTable td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+@media (max-width: 768px) {
+  .responsibilitiesGrid,
+  .processContainer,
+  .infoCardsContainer,
+  .committeeGrid {
+    grid-template-columns: 1fr;
+  }
+}
