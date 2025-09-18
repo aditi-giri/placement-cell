@@ -1,8 +1,9 @@
 import mongoose from "mongoose";
 import Student from "../models/student.model.js";
+import dotenv from 'dotenv';
 
 // MongoDB connection string
-const mongoURI = "mongodb+srv://placement_cell:5vb6bYoYujqwWNt0@cluster0.dhigz.mongodb.net/placementCell?retryWrites=true&w=majority&appName=Cluster0";
+const mongoURI = dotenv.DB_URL;
 
 // Seeding function
 const seedStudentRecords = async () => {

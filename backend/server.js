@@ -29,7 +29,7 @@ app.use(express.static("uploads"))
 
 const start = async() => {
 
-    const connectDB = await mongoose.connect("mongodb+srv://placement_cell:5vb6bYoYujqwWNt0@cluster0.dhigz.mongodb.net/placementCell?retryWrites=true&w=majority&appName=Cluster0")
+    const connectDB = await mongoose.connect(dotenv.DB_URL)
 
     app.listen(8080,()=> {
         console.log("server is running on port 8080");

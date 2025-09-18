@@ -67,7 +67,7 @@ export const login = async (req, res) => {
     student.token = token;
     await student.save();
 
-    // ✅ Check if profile exists, create if not
+    // Check if profile exists, create if not
     let profile = await StudentProfile.findOne({ student: student._id });
     if (!profile) {
       
