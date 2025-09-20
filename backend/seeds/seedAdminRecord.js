@@ -2,8 +2,9 @@ import mongoose from "mongoose";
 import Admin from "../models/admin.model.js";
 import dotenv from 'dotenv';
 
+dotenv.config();
 // MongoDB connection string
-const mongoURI = dotenv.DB_URL;
+const mongoURI = process.env.DB_URL;
 
 // Seeding function
 const seedAdminRecords = async () => {

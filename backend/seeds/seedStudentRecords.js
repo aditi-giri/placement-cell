@@ -2,8 +2,9 @@ import mongoose from "mongoose";
 import Student from "../models/student.model.js";
 import dotenv from 'dotenv';
 
+dotenv.config();
 // MongoDB connection string
-const mongoURI = dotenv.DB_URL;
+const mongoURI = process.env.DB_URL;
 
 // Seeding function
 const seedStudentRecords = async () => {
